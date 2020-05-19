@@ -10,7 +10,7 @@ namespace Spell_The_Number
     {
         public String ConvertToWords(string num)
         {
-            String val = "", wholeNo = num;
+            String val = "", wholeNo = num, find = "Hundred", replaceWord = "Hundred And";
 
             try
             {
@@ -18,9 +18,9 @@ namespace Spell_The_Number
                 if (isDecimal < 0)
                 {
                     val = ConvertWholeNumber(wholeNo);
-                    if (val.Contains("Hundred"))
+                    if (val.Contains(find))
                     {
-                       val = ReplaceLastOccurrence(val, "Hundred", "Hundred And");
+                       val = ReplaceLastOccurrence(val, find, replaceWord);
                     }
                 }
                 else throw new NullReferenceException("Only whole number is allowed");
