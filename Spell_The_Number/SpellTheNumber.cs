@@ -35,7 +35,7 @@ namespace Spell_The_Number
             {
                 bool isDone = false;
                 double dblDigit = (Convert.ToDouble(WholeNumb));
-                if (dblDigit > 0)
+                if (dblDigit > 0) //Ignores negative number
                 {
                     int numDigits = WholeNumb.Length;
                     int pos = 0;
@@ -98,6 +98,7 @@ namespace Spell_The_Number
 
 
                 }
+                else throw new NullReferenceException("Only whole number is allowed");
             }
             catch { }
             return word.Trim();
