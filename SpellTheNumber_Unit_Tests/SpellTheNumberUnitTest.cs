@@ -15,7 +15,7 @@ namespace SpellTheNumber_Unit_Tests
         {
             var translated = new SpellTheNumber();
             var actualResult = translated.ConvertToWords("123");
-            var expectedResult = "One Hundred Twenty Three";
+            var expectedResult = "One Hundred And Twenty Three";
             Assert.AreEqual(expectedResult, actualResult);
         }
         [TestMethod]
@@ -23,7 +23,7 @@ namespace SpellTheNumber_Unit_Tests
         {
             var translated = new SpellTheNumber();
             var actualResult = translated.ConvertToWords("13456");
-            var expectedResult = "Thirteen Thousand Four Hundred Fifty Six";
+            var expectedResult = "Thirteen Thousand Four Hundred And Fifty Six";
             Assert.AreEqual(expectedResult, actualResult);
         }
         [TestMethod]
@@ -31,7 +31,7 @@ namespace SpellTheNumber_Unit_Tests
         {
             var translated = new SpellTheNumber();
             var actualResult = translated.ConvertToWords("1233456");
-            var expectedResult = "One Million Two Hundred Thirty Three Thousand Four Hundred Fifty Six";
+            var expectedResult = "One Million Two Hundred Thirty Three Thousand Four Hundred And Fifty Six";
             Assert.AreEqual(expectedResult, actualResult);
         }
         [TestMethod]
@@ -39,7 +39,7 @@ namespace SpellTheNumber_Unit_Tests
         {
             var translated = new SpellTheNumber();
             var actualResult = translated.ConvertToWords("1233445566");
-            var expectedResult = "One Billion Two Hundred Thirty Three Million Four Hundred Fourty Five Thousand Five Hundred Sixty Six";
+            var expectedResult = "One Billion Two Hundred Thirty Three Million Four Hundred Fourty Five Thousand Five Hundred And Sixty Six";
             Assert.AreEqual(expectedResult, actualResult);
         }
         [TestMethod]

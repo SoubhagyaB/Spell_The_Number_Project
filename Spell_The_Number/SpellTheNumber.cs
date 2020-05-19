@@ -18,6 +18,10 @@ namespace Spell_The_Number
                 if (isDecimal < 0)
                 {
                     val = ConvertWholeNumber(wholeNo);
+                    if (val.Contains("Hundred"))
+                    {
+                        val = val.Replace("Hundred", "Hundred And");                        
+                    }
                 }
                 else throw new NullReferenceException("Only whole number is allowed");
             }
@@ -199,6 +203,6 @@ namespace Spell_The_Number
                     break;
             }
             return name;
-        }
+        }       
     }
 }
