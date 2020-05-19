@@ -14,12 +14,14 @@ namespace Spell_The_Number
 
             try
             {
-                val = ConvertWholeNumber(wholeNo);
+                int isDecimal = num.IndexOf(".");
+                if (isDecimal < 0)
+                {
+                    val = ConvertWholeNumber(wholeNo);
+                }
+                else throw new NullReferenceException("Only whole number is allowed");
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch(Exception ex) { throw; }           
             return val;
         }
         private String ConvertWholeNumber(String WholeNumb)
