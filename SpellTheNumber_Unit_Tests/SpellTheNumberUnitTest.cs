@@ -44,11 +44,19 @@ namespace SpellTheNumber_Unit_Tests
         }
         [TestMethod]
         [ExpectedException (typeof(NullReferenceException))]
-        public void Number_Exception_TestMethod()
+        public void Decimal_Number_Exception_TestMethod()
         {
             var translated = new SpellTheNumber();
             var actualResult = translated.ConvertToWords("134.56");
             
+        }
+        [TestMethod]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void Negative_Number_Exception_TestMethod()
+        {
+            var translated = new SpellTheNumber();
+            var actualResult = translated.ConvertToWords("-10");
+
         }
     }
 }
