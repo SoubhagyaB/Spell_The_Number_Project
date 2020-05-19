@@ -100,7 +100,7 @@ namespace Spell_The_Number
                 }
                 else throw new NullReferenceException("Only whole number is allowed");
             }
-            catch { }
+            catch(Exception ex) { throw ex; }
             return word.Trim();
         }
         private String Tens(String Number)
