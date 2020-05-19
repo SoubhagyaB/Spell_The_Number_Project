@@ -34,66 +34,70 @@ namespace Spell_The_Number
             try
             {
                 bool isDone = false;
-                int numDigits = WholeNumb.Length;
-                int pos = 0;
-                String place = "";
-                switch (numDigits)
+                double dblDigit = (Convert.ToDouble(WholeNumb));
+                if (dblDigit > 0)
                 {
-                    case 1://ones' range
-                        word = Ones(WholeNumb);
-                        isDone = true;
-                        break;
-                    case 2://tens' range
-                        word = Tens(WholeNumb);
-                        isDone = true;
-                        break;
-                    case 3://hundreds' range
-                        pos = (numDigits % 3) + 1;
-                        place = " Hundred ";
-                        break;
-                    case 4://thousands' range
-                    case 5:
-                    case 6:
-                        pos = (numDigits % 4) + 1;
-                        place = " Thousand ";
-                        break;
-                    case 7://millions' range
-                    case 8:
-                    case 9:
-                        pos = (numDigits % 7) + 1;
-                        place = " Million ";
-                        break;
-                    case 10://Billions's range
-                    case 11:
-                    case 12:
-
-                        pos = (numDigits % 10) + 1;
-                        place = " Billion ";
-                        break;
-                    //add extra case options for anything above Billion...
-                    default:
-                        isDone = true;
-                        break;
-                }
-                if (!isDone) //Recursive
-                {
-                    if (WholeNumb.Substring(0, pos) != "0" && WholeNumb.Substring(pos) != "0")
+                    int numDigits = WholeNumb.Length;
+                    int pos = 0;
+                    String place = "";
+                    switch (numDigits)
                     {
-                        try
+                        case 1://ones' range
+                            word = Ones(WholeNumb);
+                            isDone = true;
+                            break;
+                        case 2://tens' range
+                            word = Tens(WholeNumb);
+                            isDone = true;
+                            break;
+                        case 3://hundreds' range
+                            pos = (numDigits % 3) + 1;
+                            place = " Hundred ";
+                            break;
+                        case 4://thousands' range
+                        case 5:
+                        case 6:
+                            pos = (numDigits % 4) + 1;
+                            place = " Thousand ";
+                            break;
+                        case 7://millions' range
+                        case 8:
+                        case 9:
+                            pos = (numDigits % 7) + 1;
+                            place = " Million ";
+                            break;
+                        case 10://Billions's range
+                        case 11:
+                        case 12:
+
+                            pos = (numDigits % 10) + 1;
+                            place = " Billion ";
+                            break;
+                        //add extra case options for anything above Billion...
+                        default:
+                            isDone = true;
+                            break;
+                    }
+                    if (!isDone) //Recursive
+                    {
+                        if (WholeNumb.Substring(0, pos) != "0" && WholeNumb.Substring(pos) != "0")
                         {
-                            word = ConvertWholeNumber(WholeNumb.Substring(0, pos)) + place + ConvertWholeNumber(WholeNumb.Substring(pos));
+                            try
+                            {
+                                word = ConvertWholeNumber(WholeNumb.Substring(0, pos)) + place + ConvertWholeNumber(WholeNumb.Substring(pos));
+                            }
+                            catch { }
                         }
-                        catch { }
+                        else
+                        {
+                            word = ConvertWholeNumber(WholeNumb.Substring(0, pos)) + ConvertWholeNumber(WholeNumb.Substring(pos));
+                        }
+
                     }
-                    else
-                    {
-                        word = ConvertWholeNumber(WholeNumb.Substring(0, pos)) + ConvertWholeNumber(WholeNumb.Substring(pos));
-                    }
+                    if (word.Trim().Equals(place.Trim())) word = "";
+
 
                 }
-                if (word.Trim().Equals(place.Trim())) word = "";
-
-
             }
             catch { }
             return word.Trim();
