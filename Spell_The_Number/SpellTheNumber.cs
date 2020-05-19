@@ -8,6 +8,21 @@ namespace Spell_The_Number
 {
     public class SpellTheNumber
     {
+        //static void Main(string[] args)
+        //{
+        //    try
+        //    {
+        //        Console.WriteLine("Enter a Number to convert into words");
+        //        string number = Console.ReadLine();
+        //        //bool isContainString = number.Any(char.IsNumber);
+        //        Console.WriteLine($"The whole number is: {ConvertToWords(number)}");
+        //        Console.ReadKey();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //}
         public String ConvertToWords(string num)
         {
             String val = "", wholeNo = num;
@@ -20,7 +35,8 @@ namespace Spell_The_Number
                     val = ConvertWholeNumber(wholeNo);
                     if (val.Contains("Hundred"))
                     {
-                        val = val.Replace("Hundred", "Hundred And");                        
+                        val = val.Replace("Hundred", "Hundred And");
+                        val = ReplaceLastOccurrence(val, "Hundred", "Hundred And");
                     }
                 }
                 else throw new NullReferenceException("Only whole number is allowed");
@@ -203,6 +219,16 @@ namespace Spell_The_Number
                     break;
             }
             return name;
-        }       
+        }
+        private string ReplaceLastOccurrence(string Source, string Find, string Replace)
+        {
+            int place = Source.LastIndexOf(Find);
+
+            if (place == -1)
+                return Source;
+
+            string result = Source.Remove(place, Find.Length).Insert(place, Replace);
+            return result;
+        }
     }
 }

@@ -10,14 +10,14 @@ namespace SpellTheNumber_Unit_Tests
         public void TestMethod1()
         {
         }
-        [TestMethod]
-        public void Number_Hundred_Series_TestMethod()
-        {
-            var translated = new SpellTheNumber();
-            var actualResult = translated.ConvertToWords("123");
-            var expectedResult = "One Hundred And Twenty Three";
-            Assert.AreEqual(expectedResult, actualResult);
-        }
+        //[TestMethod]
+        //public void Number_Hundred_Series_TestMethod()
+        //{
+        //    var translated = new SpellTheNumber();
+        //    var actualResult = translated.ConvertToWords("123");
+        //    var expectedResult = "One Hundred And Twenty Three";
+        //    Assert.AreEqual(expectedResult, actualResult);
+        //}
         //[TestMethod]
         //public void Number_Thousand_Series_TestMethod()
         //{
