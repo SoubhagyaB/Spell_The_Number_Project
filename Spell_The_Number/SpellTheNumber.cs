@@ -8,21 +8,6 @@ namespace Spell_The_Number
 {
     public class SpellTheNumber
     {
-        //static void Main(string[] args)
-        //{
-        //    try
-        //    {
-        //        Console.WriteLine("Enter a Number to convert into words");
-        //        string number = Console.ReadLine();
-        //        //bool isContainString = number.Any(char.IsNumber);
-        //        Console.WriteLine($"The whole number is: {ConvertToWords(number)}");
-        //        Console.ReadKey();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
-        //}
         public String ConvertToWords(string num)
         {
             String val = "", wholeNo = num;
