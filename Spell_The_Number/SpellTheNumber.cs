@@ -20,8 +20,7 @@ namespace Spell_The_Number
                     val = ConvertWholeNumber(wholeNo);
                     if (val.Contains("Hundred"))
                     {
-                        val = val.Replace("Hundred", "Hundred And");
-                        val = ReplaceLastOccurrence(val, "Hundred", "Hundred And");
+                       val = ReplaceLastOccurrence(val, "Hundred", "Hundred And");
                     }
                 }
                 else throw new NullReferenceException("Only whole number is allowed");
